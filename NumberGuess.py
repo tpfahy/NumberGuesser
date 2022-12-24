@@ -2,12 +2,12 @@ import random as r
 
 print("Hello! Welcome to the number guessing game")
 player = input("Please tell me what your name is?: ")
-print(f"Excellent, thank you. {player} what range of numbers would you like to guess?")
+print(f"Excellent, thank you. {player}, what range of numbers would you like to guess?")
 number = 0
 while number < 2:
 
     try:
-        number = input("Please give a number greater than 2 (no decimals)")
+        number = int(input("Please give a number greater than 2 (no decimals)"))
     except Exception:
         print("Please try again to enter a valid number")
 
@@ -21,7 +21,7 @@ while guesses < 1:
 randomNumber = r.randint(1, number)
 
 for i in range(guesses):
-    playerGuess = "Guess a number: "
+    playerGuess = int(input("Guess a number: "))
     if playerGuess == randomNumber:
         print(f"You got it in {i + 1} guesse(s)!")
         break
@@ -29,3 +29,4 @@ for i in range(guesses):
         print("Lower")
     else:
         print("Higher")
+
