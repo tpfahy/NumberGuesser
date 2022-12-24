@@ -1,5 +1,6 @@
 import random as r
 
+result = False
 print("Hello! Welcome to the number guessing game")
 player = input("Please tell me what your name is?: ")
 print(f"Excellent, thank you. {player}, what range of numbers would you like to guess?")
@@ -24,9 +25,15 @@ for i in range(guesses):
     playerGuess = int(input("Guess a number: "))
     if playerGuess == randomNumber:
         print(f"You got it in {i + 1} guesse(s)!")
+        result = True
         break
     elif playerGuess > randomNumber:
         print("Lower")
     else:
         print("Higher")
 
+if result:
+    print("Congratulations you won!!!")
+
+else:
+    print("Unfortunately, you did not win")
